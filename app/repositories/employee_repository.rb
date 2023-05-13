@@ -13,6 +13,10 @@ class EmployeeRepository
     @employees
   end
 
+  def all_riders
+    @employees.select { |employee| employee.rider? }
+  end
+
   def find_by_username(username)
     @employees.find { |employee| employee.username == username }
   end
